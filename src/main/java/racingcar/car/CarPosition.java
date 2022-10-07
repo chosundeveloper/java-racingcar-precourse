@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class CarPosition {
 
-    private final int position;
+    private int position;
 
     protected CarPosition() {
         this.position = 0;
@@ -27,4 +27,9 @@ public class CarPosition {
         return Objects.hash(this.position);
     }
 
+    public CarPosition move() {
+        return new CarPosition(this.position + 1);
+    }
+
 }
+
