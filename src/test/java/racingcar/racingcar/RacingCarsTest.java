@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class RacingCarsTest {
 
     @Test
-    void createRacingCars() {
+    void createReferee() {
         RacingCars racingCars = new RacingCars();
         racingCars.add(new Car(new CarName("람보르기니"), new CarPosition()));
         racingCars.add(new Car(new CarName("페라리"), new CarPosition()));
