@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class CarPosition {
 
-    private int position;
+    private final int position;
 
-    protected CarPosition() {
+    public CarPosition() {
         this.position = 0;
     }
 
