@@ -7,6 +7,9 @@ public class MovingNumber {
     private final int number;
 
     public MovingNumber(int number) {
+        if (number < 1) {
+            throw new IllegalArgumentException("이동 횟수는 1보다 작을 수 없습니다.");
+        }
         this.number = number;
     }
 

@@ -3,8 +3,10 @@ package racingcar.referee;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import racingcar.car.CarName;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("이동 횟수")
 class MovingNumberTest {
@@ -15,6 +17,15 @@ class MovingNumberTest {
     void createMovingNumber(int number) {
         MovingNumber movingNumber = new MovingNumber(number);
         assertThat(movingNumber).isEqualTo(new MovingNumber(number));
+    }
+
+    @DisplayName("이동 횟수는 1보다 커야한다.")
+    @ParameterizedTest
+    @ValueSource(strings = "-1")
+    void createNegativeMovingNumber(int number) {
+        assertThatThrownBy(() -> new MovingNumber(number))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("이동 횟수는 1보다 작을 수 없습니다.");
     }
 
 }
