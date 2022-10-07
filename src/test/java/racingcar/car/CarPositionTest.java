@@ -7,19 +7,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("자동차 위치")
-class CarPositionTest {
+class PositionTest {
 
     @DisplayName("자동차 위치의 초기값은 0이다.")
     @Test
     void createCarPosition() {
-        CarPosition carPosition = new CarPosition();
-        assertThat(carPosition).isEqualTo(new CarPosition(0));
+        Position position = new Position();
+        assertThat(position).isEqualTo(new Position(0));
     }
 
     @DisplayName("자동차 위치는 음수값을 가질 수 없다.")
     @Test
     void createNegativePosition() {
-        assertThatThrownBy(() -> new CarPosition(-1))
+        assertThatThrownBy(() -> new Position(-1))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("자동차의 위치는 음수일 수 없습니다.");
     }
