@@ -76,8 +76,8 @@
   - `자동차 위치(car position)`는 0부터 시작한다.
   - `자동차 위치(car position)`는 음수값을 가질 수 없다.
 #### 기능
-- `자동차 위치(car position)`는 `난수(random number)` 4~9이면 `이동(move)`한다.
-- `자동차 위치(car position)`는 `난수(random number)` 0~3이면 `이동(move)`하지 않는다.
+- `자동차(car)`는 `난수(random number)` 4~9이면 `이동(move)`한다.
+- `자동차(car)`는 `난수(random number)` 0~3이면 `이동(move)`하지 않는다.
 #### 경주 자동차
 #### 속성
 - `경주 자동차(racing cars)`는 `자동차(car)`들을 갖는다.
