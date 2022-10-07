@@ -11,6 +11,9 @@ public class CarPosition {
     }
 
     public CarPosition(int position) {
+        if (position < 0) {
+            throw new IllegalArgumentException("자동차의 위치는 음수일 수 없습니다.");
+        }
         this.position = position;
     }
 

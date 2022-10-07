@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("자동차 위치")
 class CarPositionTest {
@@ -13,6 +14,14 @@ class CarPositionTest {
     void createCarPosition() {
         CarPosition carPosition = new CarPosition();
         assertThat(carPosition).isEqualTo(new CarPosition(0));
+    }
+
+    @DisplayName("자동차 위치는 음수값을 가질 수 없다.")
+    @Test
+    void createNegativePosition() {
+        assertThatThrownBy(() -> new CarPosition(-1))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("자동차의 위치는 음수일 수 없습니다.");
     }
 
 }
