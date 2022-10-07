@@ -1,13 +1,21 @@
 package racingcar.car;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 class CarNameTest {
+
+    @DisplayName("자동차 이름 생성")
+    @Test
+    void createCarName() {
+        assertDoesNotThrow(() -> new CarName("람보르기니"));
+    }
 
     @DisplayName("자동차 이름은 null 또는 공백일 수 없다.")
     @NullAndEmptySource
