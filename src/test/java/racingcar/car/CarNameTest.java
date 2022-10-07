@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+@DisplayName("자동차 이름")
 class CarNameTest {
 
     @DisplayName("자동차 이름 생성")

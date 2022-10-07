@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+@DisplayName("자동차")
 class CarTest {
 
     @DisplayName("자동차를 생성한다.")
