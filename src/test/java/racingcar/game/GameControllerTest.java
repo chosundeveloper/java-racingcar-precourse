@@ -7,6 +7,7 @@ import racingcar.car.Car;
 import racingcar.car.CarName;
 import racingcar.car.CarPosition;
 import racingcar.racingcar.RacingCars;
+import racingcar.winningcars.WinningCars;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -36,4 +37,18 @@ class GameControllerTest {
         gameController.play();
         assertThat(gameController.movingNumber()).isEqualTo(new MovingNumber(0));
     }
+
+    @DisplayName("우승 자동차")
+    @ParameterizedTest
+    @ValueSource(strings = {"2"})
+    void winningCars(int number) {
+        RacingCars racingCars = new RacingCars();
+        racingCars.add(new Car(new CarName("람보르기니"), new CarPosition(4)));
+        racingCars.add(new Car(new CarName("페라리"), new CarPosition(3)));
+        GameController gameController = new GameController(new MovingNumber(number), racingCars);
+        WinningCars winningCars = gameController.winningCars();
+        assertThat(winningCars.size()).isEqualTo(1);
+        assertThat(winningCars.cars()).contains(new Car(new CarName("람보르기니"), new CarPosition(4)));
+    }
+
 }

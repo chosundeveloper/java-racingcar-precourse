@@ -1,14 +1,13 @@
-package racingcar.racingcar;
+package racingcar.winningcars;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.car.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RacingCars {
+public class WinningCars {
 
-    List<Car> cars = new ArrayList<>();
+    private final List<Car> cars = new ArrayList<>();
 
     public void add(Car car) {
         this.cars.add(car);
@@ -20,12 +19,6 @@ public class RacingCars {
 
     public List<Car> cars() {
         return this.cars;
-    }
-
-    public void move() {
-        for (Car car : cars) {
-            car.move(Randoms.pickNumberInRange(0, 9));
-        }
     }
 
 }

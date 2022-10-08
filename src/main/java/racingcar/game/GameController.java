@@ -1,6 +1,9 @@
 package racingcar.game;
 
+import racingcar.car.Car;
+import racingcar.car.CarPosition;
 import racingcar.racingcar.RacingCars;
+import racingcar.winningcars.WinningCars;
 
 public class GameController {
     private MovingNumber movingNumber;
@@ -29,4 +32,25 @@ public class GameController {
     private boolean isMovingNumberZero() {
         return this.movingNumber.equals(new MovingNumber(0));
     }
+
+    public WinningCars winningCars() {
+        WinningCars winningCars = new WinningCars();
+        for (Car car : this.racingCars.cars()) {
+            if (car.carPosition().equals(maxPosition())) {
+                winningCars.add(car);
+            }
+        }
+        return winningCars;
+    }
+
+    private CarPosition maxPosition() {
+        CarPosition maxPosition = new CarPosition();
+        for (Car car : this.racingCars.cars()) {
+            if (maxPosition.compareTo(car.carPosition()) < 0) {
+                maxPosition = car.carPosition();
+            }
+        }
+        return maxPosition;
+    }
+
 }

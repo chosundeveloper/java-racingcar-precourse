@@ -2,7 +2,7 @@ package racingcar.car;
 
 import java.util.Objects;
 
- public class CarPosition {
+public class CarPosition implements Comparable<CarPosition> {
 
     private final int position;
 
@@ -15,10 +15,6 @@ import java.util.Objects;
             throw new IllegalArgumentException("자동차의 위치는 음수일 수 없습니다.");
         }
         this.position = position;
-    }
-
-    public int position () {
-        return position;
     }
 
     @Override
@@ -36,6 +32,11 @@ import java.util.Objects;
 
     public CarPosition move() {
         return new CarPosition(this.position + 1);
+    }
+
+    @Override
+    public int compareTo(CarPosition carPosition) {
+        return Integer.compare(this.position, carPosition.position);
     }
 
 }
