@@ -12,14 +12,14 @@ class PositionTest {
     @DisplayName("자동차 위치의 초기값은 0이다.")
     @Test
     void createCarPosition() {
-        Position position = new Position();
-        assertThat(position).isEqualTo(new Position(0));
+        CarPosition position = new CarPosition();
+        assertThat(position).isEqualTo(new CarPosition(0));
     }
 
     @DisplayName("자동차 위치는 음수값을 가질 수 없다.")
     @Test
     void createNegativePosition() {
-        assertThatThrownBy(() -> new Position(-1))
+        assertThatThrownBy(() -> new CarPosition(-1))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("자동차의 위치는 음수일 수 없습니다.");
     }
