@@ -12,4 +12,7 @@ public class Game {
         return this.status;
     }
 
+    public void end() {
+        this.status = GameStatus.STOP;
+    }
 }

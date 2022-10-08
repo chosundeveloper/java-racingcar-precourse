@@ -10,9 +10,17 @@ class GameTest {
 
     @DisplayName("게임 실행")
     @Test
-    void createGame() {
+    void startGame() {
         Game game = new Game();
         game.start();
         assertThat(game.status()).isEqualTo(GameStatus.PLAYING);
+    }
+
+    @DisplayName("게임 종료")
+    @Test
+    void endGame() {
+        Game game = new Game();
+        game.end();
+        assertThat(game.status()).isEqualTo(GameStatus.STOP);
     }
 }
