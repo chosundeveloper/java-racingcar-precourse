@@ -1,4 +1,4 @@
-package racingcar.referee;
+package racingcar.game;
 
 import java.util.Objects;
 
@@ -7,8 +7,8 @@ public class MovingNumber {
     private final int number;
 
     public MovingNumber(int number) {
-        if (number < 1) {
-            throw new IllegalArgumentException("이동 횟수는 1보다 작을 수 없습니다.");
+        if (number < 0) {
+            throw new IllegalArgumentException("이동 횟수는 0보다 작을 수 없습니다.");
         }
         this.number = number;
     }
@@ -26,4 +26,7 @@ public class MovingNumber {
         return Objects.hash(number);
     }
 
+    public MovingNumber subtract() {
+        return new MovingNumber(this.number - 1);
+    }
 }

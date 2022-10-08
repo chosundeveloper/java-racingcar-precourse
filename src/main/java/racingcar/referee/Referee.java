@@ -1,5 +1,6 @@
 package racingcar.referee;
 
+import racingcar.game.MovingNumber;
 import racingcar.racingcar.RacingCars;
 
 public class Referee {

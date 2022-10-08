@@ -1,9 +1,8 @@
-package racingcar.referee;
+package racingcar.game;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import racingcar.car.CarName;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -25,7 +24,7 @@ class MovingNumberTest {
     void createNegativeMovingNumber(int number) {
         assertThatThrownBy(() -> new MovingNumber(number))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("이동 횟수는 1보다 작을 수 없습니다.");
+                .hasMessageContaining("이동 횟수는 0보다 작을 수 없습니다.");
     }
 
 }

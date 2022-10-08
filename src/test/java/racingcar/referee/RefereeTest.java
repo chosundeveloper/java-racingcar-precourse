@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import racingcar.car.Car;
 import racingcar.car.CarName;
 import racingcar.car.CarPosition;
+import racingcar.game.MovingNumber;
 import racingcar.racingcar.RacingCars;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;

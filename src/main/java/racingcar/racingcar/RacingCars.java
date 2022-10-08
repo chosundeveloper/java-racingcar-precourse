@@ -1,5 +1,6 @@
 package racingcar.racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.car.Car;
 
 import java.util.ArrayList;
@@ -15,6 +16,12 @@ public class RacingCars {
 
     public int size() {
         return this.cars.size();
+    }
+
+    public void move() {
+        for (Car car : cars) {
+            car.move(Randoms.pickNumberInRange(0, 9));
+        }
     }
 
 }
