@@ -19,4 +19,14 @@ public class GameController {
     public MovingNumber movingNumber() {
         return this.movingNumber;
     }
+
+    public void play() {
+        do {
+            playRound();
+        } while (!isMovingNumberZero());
+    }
+
+    private boolean isMovingNumberZero() {
+        return this.movingNumber.equals(new MovingNumber(0));
+    }
 }

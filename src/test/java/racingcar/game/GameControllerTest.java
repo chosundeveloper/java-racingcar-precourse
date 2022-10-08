@@ -24,4 +24,16 @@ class GameControllerTest {
         gameController.playRound();
         assertThat(gameController.movingNumber()).isEqualTo(new MovingNumber(number - 1));
     }
+
+    @DisplayName("이동 횟수가 0이 될떄까지 차수를 진행한다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"2"})
+    void play(int number) {
+        RacingCars racingCars = new RacingCars();
+        racingCars.add(new Car(new CarName("람보르기니"), new CarPosition()));
+        racingCars.add(new Car(new CarName("페라리"), new CarPosition()));
+        GameController gameController = new GameController(new MovingNumber(number), racingCars);
+        gameController.play();
+        assertThat(gameController.movingNumber()).isEqualTo(new MovingNumber(0));
+    }
 }

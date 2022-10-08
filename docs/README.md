@@ -62,9 +62,9 @@
 | 게임 종료 | game end | 게임 상태를 정지로 변경한다. |
 #### 게임 컨트롤러 
 | 차수 진행 | round play | 자동차별로 랜덤값을 생성 한 후 값에 따라 이동하거나 정지한다. |
-| 난수 | random number | 자동차의 이동여부를 결정하는 숫자 |
 #### 경주 자동차
 | 경주 자동차 | racing cars | 자동차 경주에 참여하는 자동차들 |
+| 난수 | random number | 자동차의 이동여부를 결정하는 숫자 |
 #### 우승 자동차
 | 우승 자동차 | winning car | 이동 횟수에 가장 먼저 도달한 자동차 |
 #### 심판
@@ -99,13 +99,13 @@
 ### 게임 컨트롤러
 #### 속성
 - `게임 컨트롤러(game controller)`는 `경주 자동차(racing cars)`와  `이동 횟수(moving number)`를 갖는다.
+  - `이동 횟수(moving number)`는 0보다 작을 수 없다.
 #### 기능
-- `게임 컨트롤러(game controller)`는 `차수 진행(playRound)`을 한다.
+- `게임 컨트롤러(game controller)`는 `이동 횟수(moving number)`가 0이 될떄까지 `차수 진행(playRound)`을 한다.
   - `차수 진행(playRound)`시 `이동 횟수(moving number)`를 차감한다.
 ### 심판
 #### 속성
-- `심판(referee)`은 `경주 자동차(racing cars)`와 `이동 횟수(moving number)`를 가진다.
-  - `이동 횟수(moving number)`는 1보다 작을 수 없다.
+- `심판(referee)`은 `경주 자동차(racing cars)`를 가진다.
 #### 기능
 - `심판(referee)`은 `우승 자동차(winning car)`를 `선언(declare)`한다.
   - `자동차 위치(car position)`가 가장 큰 `자동차(car)`들를 `우승 자동차(winning cars)`로 `선언(declar)`한다.
