@@ -6,9 +6,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 import racingcar.car.domain.Car;
 import racingcar.car.domain.CarName;
 import racingcar.car.domain.CarPosition;
-import racingcar.game.GameController;
 import racingcar.referee.domain.MovingNumber;
 import racingcar.referee.domain.RacingCars;
+import racingcar.referee.domain.Referee;
 import racingcar.referee.domain.WinningCars;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,13 +19,13 @@ class RefereeTest {
     @DisplayName("차수 진행")
     @ParameterizedTest
     @ValueSource(strings = {"2"})
-    void createGameController(int number) {
+    void createReferee(int number) {
         RacingCars racingCars = new RacingCars();
         racingCars.add(new Car(new CarName("람보르기니"), new CarPosition()));
         racingCars.add(new Car(new CarName("페라리"), new CarPosition()));
-        GameController gameController = new GameController(new MovingNumber(number), racingCars);
-        gameController.playRound();
-        assertThat(gameController.movingNumber()).isEqualTo(new MovingNumber(number - 1));
+        Referee referee = new Referee(racingCars, new MovingNumber(number));
+        referee.playRound();
+        assertThat(referee.movingNumber()).isEqualTo(new MovingNumber(number - 1));
     }
 
     @DisplayName("이동 횟수가 0이 될떄까지 차수를 진행한다.")
@@ -35,9 +35,9 @@ class RefereeTest {
         RacingCars racingCars = new RacingCars();
         racingCars.add(new Car(new CarName("람보르기니"), new CarPosition()));
         racingCars.add(new Car(new CarName("페라리"), new CarPosition()));
-        GameController gameController = new GameController(new MovingNumber(number), racingCars);
-        gameController.play();
-        assertThat(gameController.movingNumber()).isEqualTo(new MovingNumber(0));
+        Referee referee = new Referee(racingCars, new MovingNumber(number));
+        referee.playAllRound();
+        assertThat(referee.movingNumber()).isEqualTo(new MovingNumber(0));
     }
 
     @DisplayName("우승 자동차")
@@ -47,8 +47,8 @@ class RefereeTest {
         RacingCars racingCars = new RacingCars();
         racingCars.add(new Car(new CarName("람보르기니"), new CarPosition(4)));
         racingCars.add(new Car(new CarName("페라리"), new CarPosition(3)));
-        GameController gameController = new GameController(new MovingNumber(number), racingCars);
-        WinningCars winningCars = gameController.winningCars();
+        Referee referee = new Referee(racingCars, new MovingNumber(number));
+        WinningCars winningCars = referee.declareWinningCars();
         assertThat(winningCars.size()).isEqualTo(1);
         assertThat(winningCars.cars()).contains(new Car(new CarName("람보르기니"), new CarPosition(4)));
     }
