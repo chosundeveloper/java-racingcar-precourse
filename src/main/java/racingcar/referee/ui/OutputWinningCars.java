@@ -23,8 +23,7 @@ public class OutputWinningCars {
     }
 
     private static void appendCarName(List<Car> cars, StringBuilder names, int i) {
-        String carName = cars.get(i).carName();
-        names.append(carName);
+        names.append(cars.get(i).carName());
     }
 
     private static void appendDelimiter(List<Car> cars, StringBuilder names, int i) {
