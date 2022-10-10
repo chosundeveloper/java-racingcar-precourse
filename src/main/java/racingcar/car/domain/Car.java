@@ -5,7 +5,6 @@ import java.util.Objects;
 public class Car {
 
     private final CarName carName;
-
     private CarPosition carPosition;
     private final MoveStrategy moveStrategy;
 

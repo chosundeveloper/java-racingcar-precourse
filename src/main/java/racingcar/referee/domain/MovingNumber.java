@@ -5,7 +5,6 @@ import java.util.Objects;
 public class MovingNumber {
 
     private static final String MOVING_NUMBER_SIZE = "[ERROR] 이동 횟수는 0보다 작을 수 없습니다.";
-
     private final int number;
 
     public MovingNumber(int number) {
