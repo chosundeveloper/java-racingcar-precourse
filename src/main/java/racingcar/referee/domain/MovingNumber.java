@@ -1,4 +1,4 @@
-package racingcar.game;
+package racingcar.referee.domain;
 
 import java.util.Objects;
 

@@ -2,12 +2,13 @@ package racingcar.car;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.car.domain.CarPosition;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("자동차 위치")
-class PositionTest {
+class CarPositionTest {
 
     @DisplayName("자동차 위치의 초기값은 0이다.")
     @Test

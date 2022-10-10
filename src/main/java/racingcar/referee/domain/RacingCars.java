@@ -1,7 +1,7 @@
-package racingcar.racingcar;
+package racingcar.referee.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import racingcar.car.Car;
+import racingcar.car.domain.Car;
 
 import java.util.ArrayList;
 import java.util.List;

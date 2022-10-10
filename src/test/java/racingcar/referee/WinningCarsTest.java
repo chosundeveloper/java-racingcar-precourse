@@ -1,10 +1,11 @@
-package racingcar.winningcars;
+package racingcar.referee;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.car.Car;
-import racingcar.car.CarName;
-import racingcar.car.CarPosition;
+import racingcar.car.domain.Car;
+import racingcar.car.domain.CarName;
+import racingcar.car.domain.CarPosition;
+import racingcar.referee.domain.WinningCars;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 

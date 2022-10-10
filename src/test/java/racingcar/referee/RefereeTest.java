@@ -1,18 +1,20 @@
-package racingcar.game;
+package racingcar.referee;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import racingcar.car.Car;
-import racingcar.car.CarName;
-import racingcar.car.CarPosition;
-import racingcar.racingcar.RacingCars;
-import racingcar.winningcars.WinningCars;
+import racingcar.car.domain.Car;
+import racingcar.car.domain.CarName;
+import racingcar.car.domain.CarPosition;
+import racingcar.game.GameController;
+import racingcar.referee.domain.MovingNumber;
+import racingcar.referee.domain.RacingCars;
+import racingcar.referee.domain.WinningCars;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DisplayName("게임 컨트롤러")
-class GameControllerTest {
+@DisplayName("심판")
+class RefereeTest {
 
     @DisplayName("차수 진행")
     @ParameterizedTest

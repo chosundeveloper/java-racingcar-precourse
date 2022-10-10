@@ -1,9 +1,10 @@
 package racingcar.game;
 
-import racingcar.car.Car;
-import racingcar.car.CarPosition;
-import racingcar.racingcar.RacingCars;
-import racingcar.winningcars.WinningCars;
+import racingcar.car.domain.Car;
+import racingcar.car.domain.CarPosition;
+import racingcar.referee.domain.MovingNumber;
+import racingcar.referee.domain.RacingCars;
+import racingcar.referee.domain.WinningCars;
 
 public class GameController {
     private MovingNumber movingNumber;
