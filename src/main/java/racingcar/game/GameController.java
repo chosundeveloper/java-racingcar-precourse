@@ -15,6 +15,7 @@ public class GameController {
     public void run() {
         RacingCars racingCars = createRacingCars();
         Referee referee = new Referee(racingCars, createMovingNumber());
+        referee.playAllRound();
     }
 
     public RacingCars createRacingCars() {

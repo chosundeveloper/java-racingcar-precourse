@@ -3,6 +3,8 @@ package racingcar.referee.domain;
 import racingcar.car.domain.Car;
 import racingcar.car.domain.CarPosition;
 
+import static racingcar.referee.ui.OutputPlayRound.printPlayRound;
+
 public class Referee {
 
     private final RacingCars racingCars;
@@ -27,6 +29,7 @@ public class Referee {
     public void playRound() {
         this.racingCars.move();
         this.movingNumber = this.movingNumber.subtract();
+        printPlayRound(racingCars);
     }
 
     public WinningCars declareWinningCars() {
