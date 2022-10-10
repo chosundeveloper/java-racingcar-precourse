@@ -36,4 +36,7 @@ public class Car {
         }
     }
 
+    public String carName() {
+        return this.carName.name();
+    }
 }

@@ -39,5 +39,8 @@ public class CarPosition implements Comparable<CarPosition> {
         return Integer.compare(this.position, carPosition.position);
     }
 
+    public int position() {
+        return position;
+    }
 }
 
