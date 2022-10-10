@@ -7,8 +7,10 @@ import java.util.List;
 
 public class OutputWinningCars {
 
+    private static final String FINAL_WINNING_CARS = "최종 우승자 : ";
+
     public static void printWinningCars(WinningCars winningCars) {
-        System.out.println("최종 우승자 : " + winningCarNames(winningCars.cars()));
+        System.out.println(FINAL_WINNING_CARS + winningCarNames(winningCars.cars()));
     }
 
     public static String winningCarNames(List<Car> cars) {
