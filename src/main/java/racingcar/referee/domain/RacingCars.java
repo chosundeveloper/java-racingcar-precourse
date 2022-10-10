@@ -8,7 +8,7 @@ import java.util.List;
 
 public class RacingCars {
 
-    private static final String DUPLICATE_CARS_NAME = "[ERROR] 같은 이름의 자동차를 추가할 수 없습니다.";
+    private static final String DUPLICATE_CARS_NAME_ERROR_MESSAGE = "[ERROR] 같은 이름의 자동차를 추가할 수 없습니다.";
 
     List<Car> cars = new ArrayList<>();
 
@@ -20,9 +20,9 @@ public class RacingCars {
     private void validate(Car addCar) {
         for (Car car : this.cars) {
             if (addCar.carName().equals(car.carName())) {
-                System.out.println(DUPLICATE_CARS_NAME);
+                System.out.println(DUPLICATE_CARS_NAME_ERROR_MESSAGE);
                 System.out.println();
-                throw new IllegalArgumentException(DUPLICATE_CARS_NAME);
+                throw new IllegalArgumentException(DUPLICATE_CARS_NAME_ERROR_MESSAGE);
             }
         }
     }

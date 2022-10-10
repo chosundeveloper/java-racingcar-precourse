@@ -7,6 +7,7 @@ import static racingcar.referee.ui.OutputPlayRound.printPlayRound;
 
 public class Referee {
 
+    private static final String SHOW_RESULT = "실행 결과";
     private final RacingCars racingCars;
     private MovingNumber movingNumber;
 
@@ -16,7 +17,7 @@ public class Referee {
     }
 
     public void playAllRound() {
-        System.out.println("실행 결과");
+        System.out.println(SHOW_RESULT);
         do {
             playRound();
         } while (!isMovingNumberZero());

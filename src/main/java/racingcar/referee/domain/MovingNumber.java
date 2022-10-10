@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class MovingNumber {
 
-    private static final String MOVING_NUMBER_SIZE = "[ERROR] 이동 횟수는 0보다 작을 수 없습니다.";
+    private static final String MOVING_NUMBER_SIZE_ERROR_MESSAGE = "[ERROR] 이동 횟수는 0보다 작을 수 없습니다.";
     private final int number;
 
     public MovingNumber(int number) {
         if (number < 0) {
-            throw new IllegalArgumentException(MOVING_NUMBER_SIZE);
+            throw new IllegalArgumentException(MOVING_NUMBER_SIZE_ERROR_MESSAGE);
         }
         this.number = number;
     }

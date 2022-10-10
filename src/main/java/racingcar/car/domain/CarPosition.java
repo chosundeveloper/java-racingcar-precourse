@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class CarPosition implements Comparable<CarPosition> {
 
+    private static final String CAR_POSITIVE_POSITION_ERROR_MESSAGE = "[ERROR] 자동차의 위치는 음수일 수 없습니다.";
+
     private final int position;
 
     public CarPosition() {
@@ -12,7 +14,7 @@ public class CarPosition implements Comparable<CarPosition> {
 
     public CarPosition(int position) {
         if (position < 0) {
-            throw new IllegalArgumentException("[ERROR] 자동차의 위치는 음수일 수 없습니다.");
+            throw new IllegalArgumentException(CAR_POSITIVE_POSITION_ERROR_MESSAGE);
         }
         this.position = position;
     }
