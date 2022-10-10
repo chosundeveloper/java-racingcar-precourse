@@ -6,6 +6,7 @@ import racingcar.car.domain.CarPosition;
 import racingcar.referee.domain.MovingNumber;
 import racingcar.referee.domain.RacingCars;
 import racingcar.referee.domain.Referee;
+import racingcar.referee.domain.WinningCars;
 
 import static racingcar.car.ui.InputCarNames.readCarNames;
 import static racingcar.referee.ui.InputMovingNumber.readMovingNumber;
@@ -16,6 +17,7 @@ public class GameController {
         RacingCars racingCars = createRacingCars();
         Referee referee = new Referee(racingCars, createMovingNumber());
         referee.playAllRound();
+        WinningCars winningCars = referee.declareWinningCars();
     }
 
     public RacingCars createRacingCars() {
