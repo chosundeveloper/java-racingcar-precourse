@@ -9,6 +9,8 @@ import java.util.List;
 public class RacingCars {
 
     private static final String DUPLICATE_CARS_NAME_ERROR_MESSAGE = "[ERROR] 같은 이름의 자동차를 추가할 수 없습니다.";
+    public static final int RANDOM_MINIMUM_NUMBER = 0;
+    public static final int RANDOM_MAXIMUM_NUMBER = 9;
 
     List<Car> cars = new ArrayList<>();
 
@@ -37,7 +39,7 @@ public class RacingCars {
 
     public void move() {
         for (Car car : cars) {
-            car.move(Randoms.pickNumberInRange(0, 9));
+            car.move(Randoms.pickNumberInRange(RANDOM_MINIMUM_NUMBER, RANDOM_MAXIMUM_NUMBER));
         }
     }
 }

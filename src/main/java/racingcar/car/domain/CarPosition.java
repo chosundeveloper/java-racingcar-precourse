@@ -5,11 +5,13 @@ import java.util.Objects;
 public class CarPosition implements Comparable<CarPosition> {
 
     private static final String CAR_POSITIVE_POSITION_ERROR_MESSAGE = "[ERROR] 자동차의 위치는 음수일 수 없습니다.";
+    public static final int DEFAULT_POSITION = 0;
+    public static final int MOVE_POSITION = 1;
 
     private final int position;
 
     public CarPosition() {
-        this.position = 0;
+        this.position = DEFAULT_POSITION;
     }
 
     public CarPosition(int position) {
@@ -33,7 +35,7 @@ public class CarPosition implements Comparable<CarPosition> {
     }
 
     public CarPosition move() {
-        return new CarPosition(this.position + 1);
+        return new CarPosition(this.position + MOVE_POSITION);
     }
 
     @Override
