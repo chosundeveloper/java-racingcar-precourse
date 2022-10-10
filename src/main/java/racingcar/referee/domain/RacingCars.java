@@ -21,11 +21,15 @@ public class RacingCars {
 
     private void validate(Car addCar) {
         for (Car car : this.cars) {
-            if (addCar.carName().equals(car.carName())) {
-                System.out.println(DUPLICATE_CARS_NAME_ERROR_MESSAGE);
-                System.out.println();
-                throw new IllegalArgumentException(DUPLICATE_CARS_NAME_ERROR_MESSAGE);
-            }
+            validateDuplicateCarName(addCar, car);
+        }
+    }
+
+    private static void validateDuplicateCarName(Car addCar, Car car) {
+        if (addCar.carName().equals(car.carName())) {
+            System.out.println(DUPLICATE_CARS_NAME_ERROR_MESSAGE);
+            System.out.println();
+            throw new IllegalArgumentException(DUPLICATE_CARS_NAME_ERROR_MESSAGE);
         }
     }
 
