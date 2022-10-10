@@ -27,5 +27,4 @@ class MovingNumberTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[ERROR] 이동 횟수는 0보다 작을 수 없습니다.");
     }
-
 }

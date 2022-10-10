@@ -52,5 +52,4 @@ class RefereeTest {
         assertThat(winningCars.size()).isEqualTo(1);
         assertThat(winningCars.cars()).contains(new Car(new CarName("람보르기니"), new CarPosition(4)));
     }
-
 }

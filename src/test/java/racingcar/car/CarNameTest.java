@@ -36,5 +36,4 @@ class CarNameTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.");
     }
-
 }

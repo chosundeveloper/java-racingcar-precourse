@@ -24,5 +24,4 @@ class CarPositionTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[ERROR] 자동차의 위치는 음수일 수 없습니다.");
     }
-
 }

@@ -29,5 +29,4 @@ class MoveStrategyTest {
         car.move(randomNumber);
         assertThat(car.carPosition()).isEqualTo(new CarPosition());
     }
-
 }

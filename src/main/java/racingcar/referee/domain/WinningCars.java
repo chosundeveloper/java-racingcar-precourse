@@ -20,5 +20,4 @@ public class WinningCars {
     public List<Car> cars() {
         return this.cars;
     }
-
 }

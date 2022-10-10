@@ -40,5 +40,4 @@ public class RacingCars {
             car.move(Randoms.pickNumberInRange(0, 9));
         }
     }
-
 }

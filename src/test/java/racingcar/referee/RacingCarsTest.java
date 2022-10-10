@@ -31,5 +31,4 @@ class RacingCarsTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[ERROR] 같은 이름의 자동차를 추가할 수 없습니다.");
     }
-
 }
