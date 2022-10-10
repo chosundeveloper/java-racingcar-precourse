@@ -6,9 +6,11 @@ public class CarName {
 
     public static final String CAR_NAME_NOT_EMPTY_ERROR_MESSAGE = "[ERROR] 자동차 이름은 null 이나 공백일 수 없습니다.";
     public static final String CAR_NAME_FIVE_LENGTH_ERROR_MESSAGE = "[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.";
+    private static final int CAR_NAME_MAX_LENGTH = 5;
     private String name;
 
-    protected CarName() {}
+    protected CarName() {
+    }
 
     public CarName(String name) {
         validate(name);
@@ -42,7 +44,7 @@ public class CarName {
     }
 
     private void validateNameLength(String name) {
-        if (name.length() > 5) {
+        if (name.length() > CAR_NAME_MAX_LENGTH) {
             System.out.println(CAR_NAME_FIVE_LENGTH_ERROR_MESSAGE);
             System.out.println();
             throw new IllegalArgumentException(CAR_NAME_FIVE_LENGTH_ERROR_MESSAGE);
