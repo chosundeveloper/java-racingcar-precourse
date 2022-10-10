@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class CarName {
 
+    public static final String CAR_NAME_NOT_EMPTY_ERROR_MESSAGE = "[ERROR] 자동차 이름은 null 이나 공백일 수 없습니다.";
+    public static final String CAR_NAME_FIVE_LENGTH_ERROR_MESSAGE = "[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.";
     private String name;
 
     protected CarName() {}
@@ -33,17 +35,17 @@ public class CarName {
 
     private static void validateEmptyName(String name) {
         if (Objects.isNull(name) || name.isEmpty()) {
-            System.out.println("[ERROR] 자동차 이름은 null 이나 공백일 수 없습니다.");
+            System.out.println(CAR_NAME_NOT_EMPTY_ERROR_MESSAGE);
             System.out.println();
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 null 이나 공백일 수 없습니다.");
+            throw new IllegalArgumentException(CAR_NAME_NOT_EMPTY_ERROR_MESSAGE);
         }
     }
 
     private void validateNameLength(String name) {
         if (name.length() > 5) {
-            System.out.println("[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.");
+            System.out.println(CAR_NAME_FIVE_LENGTH_ERROR_MESSAGE);
             System.out.println();
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.");
+            throw new IllegalArgumentException(CAR_NAME_FIVE_LENGTH_ERROR_MESSAGE);
         }
     }
 
