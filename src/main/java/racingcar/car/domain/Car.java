@@ -7,10 +7,12 @@ public class Car {
     private final CarName carName;
 
     private CarPosition carPosition;
+    private final MoveStrategy moveStrategy;
 
     public Car(CarName carName, CarPosition carPosition) {
         this.carName = carName;
         this.carPosition = carPosition;
+        this.moveStrategy = new MoveStrategy();
     }
 
     public CarPosition carPosition() {
@@ -31,9 +33,13 @@ public class Car {
     }
 
     public void move(int number) {
-        if (number >= 4 && number <= 9) {
+        if (movable(number)) {
             this.carPosition = this.carPosition.move();
         }
+    }
+
+    public boolean movable(int number) {
+        return this.moveStrategy.movable(number);
     }
 
     public String carName() {
