@@ -3,14 +3,17 @@ package racingcar.game;
 import racingcar.car.domain.Car;
 import racingcar.car.domain.CarName;
 import racingcar.car.domain.CarPosition;
+import racingcar.referee.domain.MovingNumber;
 import racingcar.referee.domain.RacingCars;
 
 import static racingcar.car.ui.InputCarNames.readCarNames;
+import static racingcar.referee.ui.InputMovingNumber.readMovingNumber;
 
 public class GameController {
 
     public void run() {
         RacingCars racingCars = createRacingCars();
+        MovingNumber movingNumber = createMovingNumber();
     }
 
     public RacingCars createRacingCars() {
@@ -35,5 +38,13 @@ public class GameController {
 
     private CarName createCarName(String name) {
         return new CarName(name);
+    }
+
+    public MovingNumber createMovingNumber() {
+        try {
+            return new MovingNumber(readMovingNumber());
+        } catch (IllegalArgumentException e) {
+            return createMovingNumber();
+        }
     }
 }
