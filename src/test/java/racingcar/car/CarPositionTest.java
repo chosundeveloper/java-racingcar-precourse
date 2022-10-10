@@ -22,7 +22,7 @@ class CarPositionTest {
     void createNegativePosition() {
         assertThatThrownBy(() -> new CarPosition(-1))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("자동차의 위치는 음수일 수 없습니다.");
+                .hasMessageContaining("[ERROR] 자동차의 위치는 음수일 수 없습니다.");
     }
 
 }

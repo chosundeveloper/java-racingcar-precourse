@@ -25,7 +25,7 @@ class CarNameTest {
     void createEmptyName(String name) {
         assertThatThrownBy(() -> new CarName(name))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("자동차 이름은 null 이나 공백일 수 없습니다.");
+                .hasMessageContaining("[ERROR] 자동차 이름은 null 이나 공백일 수 없습니다.");
     }
 
     @DisplayName("자동차 이름은 5자보다 클 수 없다.")
@@ -34,7 +34,7 @@ class CarNameTest {
     void createCarNameSixLength(String name) {
         assertThatThrownBy(() -> new CarName(name))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("자동차 이름은 5자를 넘을 수 없습니다.");
+                .hasMessageContaining("[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.");
     }
 
 }

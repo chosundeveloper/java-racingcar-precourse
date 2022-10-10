@@ -19,13 +19,13 @@ class MovingNumberTest {
         assertThat(movingNumber).isEqualTo(new MovingNumber(number));
     }
 
-    @DisplayName("이동 횟수는 1보다 커야한다.")
+    @DisplayName("이동 횟수는 0보다 커야한다.")
     @ParameterizedTest
     @ValueSource(strings = "-1")
     void createNegativeMovingNumber(int number) {
         assertThatThrownBy(() -> new MovingNumber(number))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("이동 횟수는 0보다 작을 수 없습니다.");
+                .hasMessageContaining("[ERROR] 이동 횟수는 0보다 작을 수 없습니다.");
     }
 
 }

@@ -34,6 +34,7 @@ public class CarName {
     private static void validateEmptyName(String name) {
         if (Objects.isNull(name) || name.isEmpty()) {
             System.out.println("[ERROR] 자동차 이름은 null 이나 공백일 수 없습니다.");
+            System.out.println();
             throw new IllegalArgumentException("[ERROR] 자동차 이름은 null 이나 공백일 수 없습니다.");
         }
     }
@@ -41,6 +42,7 @@ public class CarName {
     private void validateNameLength(String name) {
         if (name.length() > 5) {
             System.out.println("[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.");
+            System.out.println();
             throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자를 넘을 수 없습니다.");
         }
     }

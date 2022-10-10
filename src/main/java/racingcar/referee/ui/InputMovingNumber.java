@@ -9,6 +9,8 @@ public class InputMovingNumber {
         try {
             return Integer.parseInt(Console.readLine());
         } catch (NumberFormatException e) {
+            System.out.println("숫자를 입력해 주세요");
+            System.out.println();
             return readMovingNumber();
         }
     }
